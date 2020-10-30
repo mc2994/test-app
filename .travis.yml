@@ -23,5 +23,7 @@ deploy:
   app: test-app
   env: TestApp-env
   bucket_name:  test-app-mckinley
+  local_dir: dist/test-app
+  skip_cleanup: true
   on:
     branch: main
