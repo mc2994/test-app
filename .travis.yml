@@ -10,13 +10,20 @@ before_script:
   - npm install -g @angular/cli
 script:
   - ng lint
-  - npm run test-headless
-  - ng build --prod
+  # - npm run test-headless
+  # - ng build --prod
 
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN
-#   local_dir: dist/travis-demo
-#   on:
-#     branch: master
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
+  region: ap-southeast-1
+  app: test-app
+  env: TestApp-env
+  bucket_name:  elasticbeanstalk-ap-southeast-1-722632012472
+  bucket_path: docker-multi
+  on:
+    branch: main
