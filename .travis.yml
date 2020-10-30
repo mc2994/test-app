@@ -24,7 +24,7 @@ deploy:
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   region: ap-southeast-1
   app: test-app
-  env: TestApp-env1
+  env: TestApp-env-1
   bucket_name:  test-app-mckinley
   # skip_cleanup: true
   on:
