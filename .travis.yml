@@ -13,6 +13,9 @@ script:
   # - npm run test-headless
   - ng build --prod
 
+before_deploy:
+  - cd dist
+  - cd test-app
 
 deploy:
   edge: true
@@ -23,7 +26,6 @@ deploy:
   app: test-app
   env: TestApp-env
   bucket_name:  test-app-mckinley
-  local_dir: dist/test-app
   skip_cleanup: true
   on:
     branch: main
