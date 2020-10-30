@@ -24,7 +24,6 @@ deploy:
   region: ap-southeast-1
   app: test-app
   env: TestApp-env
-  bucket_name:  elasticbeanstalk-ap-southeast-1-722632012472
-  bucket_path: docker-multi
+  bucket_name:  test-app-mckinley
   on:
     branch: main
